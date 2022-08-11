@@ -1,0 +1,52 @@
+@use '../helpers//functions';
+@use '../helpers//variables';
+
+.scoreboard {
+	width: 70vw;
+	max-width: 800px;
+	margin: 1.5rem auto 0 auto;
+	padding: 1rem;
+	display: flex;
+	justify-content: space-between;
+	background: transparent;
+	border: 3px solid variables.$Header-Outline;
+	border-radius: 10px;
+
+	.game-mode {
+		text-transform: uppercase;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+
+		& > h2 {
+			color: white;
+			font-size: 1.8rem;
+			font-weight: functions.font-weight('Semi-Bold');
+			line-height: 23.5px;
+		}
+	}
+
+	.score {
+		background-color: white;
+		width: 100px;
+		text-align: center;
+		border-radius: 6px;
+
+		& > p {
+			color: variables.$Score-Text;
+			font-size: 0.9rem;
+			font-weight: functions.font-weight('Medium');
+			margin-top: 0.2rem;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+		}
+
+		.score__number {
+			font-weight: functions.font-weight('Bold');
+			font-size: 2.2rem;
+			color: variables.$Dark-Text;
+			margin-top: 0.1rem;
+			word-wrap: break-word;
+		}
+	}
+}

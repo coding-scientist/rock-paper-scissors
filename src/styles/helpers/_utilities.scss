@@ -1,0 +1,11 @@
+@use './functions';
+
+.bold {
+	font-weight: functions.font-weight('Bold');
+}
+
+.children-bold {
+	* {
+		font-weight: functions.font-weight('Bold');
+	}
+}

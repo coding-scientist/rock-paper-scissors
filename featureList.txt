@@ -1,0 +1,31 @@
+!!IMPORTANT export context into a separate context file
+
+shuffle animation for the house's play as well as a sound effect if you win or lose
+
+modal to showcase the rules of the game
+	Modal component that would show when the rules button is pressed (can be shuffled with modalIsOpen state)
+
+A counter to keep track of the score
+	state to keep track of the score (If the player wins, they gain 1 point. If the computer wins, the player loses one point.)
+
+a screen for choosing your play as well as a screen for comparing you play against the house's play (choosePlay state and comparePlay state)
+	choosePlay state would show when the player clicks on the play buttons
+	comparePlay state would show after the player chooses their play
+
+play again button if you win or lose (will likely use a start game function)
+	playAgain state would show when the player wins or loses
+	startGame function would reset the game
+
+An algorithm to determine who has won the round (original */)
+
+the house's play should be random /
+
+the house's play should be a random selection from the list of possible plays /
+
+a wavy colour effect behind the player who wins the round
+
+A separate algorithm to determine who was won the game that includes the bonus plays
+
+
+
+potentially use enums to represent the different plays /

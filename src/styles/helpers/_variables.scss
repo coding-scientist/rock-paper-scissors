@@ -1,0 +1,37 @@
+/* Colors */
+
+// Primary
+
+$Scissors-Gradient-Start: hsl(39, 89%, 41%);
+$Scissors-Gradient-End: hsl(40, 84%, 53%);
+$Paper-Gradient-Start: hsl(230, 89%, 62%); 
+$Paper-Gradient-End: hsl(230, 89%, 65%);
+$Rock-Gradient-Start: hsl(349, 71%, 52%);
+$Rock-Gradient-End: hsl(349, 70%, 56%);
+$Lizard-Gradient-Start: hsl(261, 73%, 60%);
+$Lizard-Gradient-End: hsl(261, 72%, 63%);
+$Cyan-Start: hsl(189, 59%, 53%);
+$Cyan-End: hsl(189, 58%, 57%);
+
+// Neutral
+
+$Dark-Text: hsl(229, 25%, 31%);
+$Score-Text: hsl(229, 64%, 46%);
+$Header-Outline: hsl(217, 16%, 45%);
+
+// Background
+
+$Radial-Gradient-Start: hsl(214, 47%, 23%);
+$Radial-Gradient-End: hsl(237, 49%, 15%);
+
+
+/* Typography */
+$Primary-Font: 'Barlow semi condensed';
+
+$Font-Weights: (
+	"Regular": 400,
+	"Medium": 500,
+	"Semi-Bold": 600,
+	"Bold": 700,
+	"Extra-Bold": bolder,
+);

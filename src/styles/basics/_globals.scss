@@ -1,0 +1,20 @@
+@use '../helpers//variables';
+@use '../helpers//functions';
+
+*, *::before, *::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: variables.$Primary-Font;
+	font-weight: functions.font-weight('Regular');
+}
+
+body {
+	background-color: variables.$Radial-Gradient-Start;
+}
+
+.main-container {
+	width: 100%;
+	max-width: 900px;
+	margin: 0 auto;
+}
