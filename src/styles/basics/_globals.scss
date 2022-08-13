@@ -10,11 +10,27 @@
 }
 
 body {
-	background-color: variables.$Radial-Gradient-Start;
+	background: radial-gradient(variables.$Radial-Gradient-Start, variables.$Radial-Gradient-End);
 }
 
 .main-container {
 	width: 100%;
 	max-width: 900px;
 	margin: 0 auto;
+}
+
+.show-rules-modal-btn {
+	padding: .6em 1.8em;
+	display: block;
+	margin: 0 auto 2rem auto;
+	background-color: transparent;
+	color: white;
+	border: 2px solid;
+	border-radius: 7px;
+	text-align: center;
+	font-size: 1rem;
+	font-weight: functions.font-weight('Medium');
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	cursor: pointer;
 }

@@ -2,8 +2,8 @@
 
 shuffle animation for the house's play as well as a sound effect if you win or lose
 
-modal to showcase the rules of the game
-	Modal component that would show when the rules button is pressed (can be shuffled with modalIsOpen state)
+modal to showcase the rules of the game /
+	Modal component that would show when the rules button is pressed (can be shuffled with modalIsOpen state) /
 
 A counter to keep track of the score
 	state to keep track of the score (If the player wins, they gain 1 point. If the computer wins, the player loses one point.)
@@ -26,6 +26,6 @@ a wavy colour effect behind the player who wins the round
 
 A separate algorithm to determine who was won the game that includes the bonus originalPlays
 
-
-
 potentially use enums to represent the different originalPlays /
+
+Replace image logo with the image that was provided

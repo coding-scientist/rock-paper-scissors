@@ -23,9 +23,13 @@ interface contextInterface {
 	setComputerPlay: Dispatch<SetStateAction<originalPlays>>;
 	hasBeenClicked: boolean;
 	setHasBeenClicked: Dispatch<SetStateAction<boolean>>;
+	modalIsOpen: boolean;
+	setModalIsOpen: Dispatch<SetStateAction<boolean>>;
 }
 
-export const globalContext = createContext<contextInterface>({} as contextInterface);
+export const globalContext = createContext<contextInterface>(
+	{} as contextInterface
+);
 
 const GlobalContextProvider: FC<Props> = ({ children }) => {
 	const [score, setScore] = useState(0);
@@ -35,9 +39,10 @@ const GlobalContextProvider: FC<Props> = ({ children }) => {
 		originalPlays.NONE
 	);
 	const [hasBeenClicked, setHasBeenClicked] = useState(false);
+	const [modalIsOpen, setModalIsOpen] = useState(true);
 
 	const context: contextInterface = {
-		score: score,
+		score,
 		setScore,
 		isPlayingOriginalGame,
 		setIsPlayingOriginalGame,
@@ -46,7 +51,9 @@ const GlobalContextProvider: FC<Props> = ({ children }) => {
 		computerPlay,
 		setComputerPlay,
 		hasBeenClicked,
-		setHasBeenClicked
+		setHasBeenClicked,
+		modalIsOpen,
+		setModalIsOpen,
 	};
 
 	return (

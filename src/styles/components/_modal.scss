@@ -1,0 +1,32 @@
+@use '../helpers/variables';
+@use '../helpers/functions';
+
+.rules-modal {
+	position: fixed;
+	inset: 0 0 0 0;
+	background-color: white;
+
+	h2 {
+		font-size: 1.5rem;
+		font-weight: functions.font-weight('Bold');
+		color: variables.$Dark-Text;
+		text-align: center;
+		margin: 5rem 0;
+	}
+
+	.rules-modal__background-image {
+		width: 75%;
+		display: block;
+		margin: 0 auto;
+	}
+
+	.exit-modal-btn {
+		background: transparent;
+		border: none;
+		color: variables.$Header-Outline;
+		font-size: 3rem;
+		font-weight: functions.font-weight('Semi-Bold');
+		display: block;
+		margin: 7rem auto 0 auto;
+	}
+}

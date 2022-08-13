@@ -6,6 +6,9 @@ import { originalPlays } from './enums/originalPlays';
 import { playerTypes } from './enums/playerTypes';
 import determineRoundWinner from './helpers/determineRoundWinner';
 import { globalContext } from './context/GlobalContext';
+import RulesModal from './components/RulesModal';
+import rules_backgroundImageOriginal from './assets/images/image-rules.svg';
+import rules_backgroundImageBonus from './assets/images/image-rules-bonus.svg'
 
 const App: FC = () => {
 	const {
@@ -16,6 +19,8 @@ const App: FC = () => {
 		setComputerPlay,
 		setScore,
 		isPlayingOriginalGame,
+		modalIsOpen,
+		setModalIsOpen,
 	} = useContext(globalContext);
 
 	useEffect(() => {
@@ -47,6 +52,19 @@ const App: FC = () => {
 		<main className='main-container'>
 			<Scoreboard score={score} />
 			{isPlayingOriginalGame ? <OriginalGame /> : <BonusGame />}
+			<button
+				className='show-rules-modal-btn'
+				onClick={() => setModalIsOpen(prevState => !prevState)}
+			>
+				Rules
+			</button>
+			{modalIsOpen && (
+				<RulesModal
+					backGroundImage={
+						isPlayingOriginalGame ? rules_backgroundImageOriginal : rules_backgroundImageBonus
+					}
+				/>
+			)}
 		</main>
 	);
 };
