@@ -1,60 +1,53 @@
-import {
-	createContext,
-	Dispatch,
-	FC,
-	SetStateAction,
-	useEffect,
-	useState,
-} from 'react';
+import { FC, useContext, useEffect } from 'react';
 import BonusGame from './components/BonusGame';
 import OriginalGame from './components/OriginalGame';
 import Scoreboard from './components/Scoreboard';
-import { Player } from './enums/Player';
-import { Plays } from './enums/Plays';
+import { originalPlays } from './enums/originalPlays';
+import { playerTypes } from './enums/playerTypes';
 import determineRoundWinner from './helpers/determineRoundWinner';
-
-interface UserPlayContext {
-	setUserPlay: Dispatch<SetStateAction<Plays>>;
-	setHasBeenClicked: Dispatch<SetStateAction<boolean>>;
-}
-
-export const userPlayContext = createContext<UserPlayContext>({} as UserPlayContext);
+import { globalContext } from './context/GlobalContext';
 
 const App: FC = () => {
-	const [score, setScore] = useState(0);
-	const [isPlayingOriginalGame, setIsPlayingOriginalGame] = useState(true);
-	const [userPlay, setUserPlay] = useState<Plays>(Plays.NONE);
-	const [computerPlay, setComputerPlay] = useState<Plays>(Plays.NONE);
-	const [hasBeenClicked, setHasBeenClicked] = useState(false);
+	const {
+		score,
+		hasBeenClicked,
+		userPlay,
+		computerPlay,
+		setComputerPlay,
+		setScore,
+		isPlayingOriginalGame,
+	} = useContext(globalContext);
 
 	useEffect(() => {
 		setRandomComputerPlay();
-		adjustPoints(determineRoundWinner(userPlay, computerPlay));
+		const winner = determineRoundWinner(userPlay, computerPlay);
+		adjustPoints(winner);
 	}, [hasBeenClicked]);
 
 	const setRandomComputerPlay = () => {
 		const randomNumber = Math.floor(Math.random() * 3);
-		const randomComputerPlay = [Plays.ROCK, Plays.PAPER, Plays.SCISSORS][
-			randomNumber
+		const computerPlayOptions = [
+			originalPlays.ROCK,
+			originalPlays.PAPER,
+			originalPlays.SCISSORS,
 		];
+		const randomComputerPlay = computerPlayOptions[randomNumber];
 		setComputerPlay(randomComputerPlay);
 	};
 
-	const adjustPoints = (winner: Player) => {
-		if (winner === Player.USER) {
+	const adjustPoints = (winner: playerTypes) => {
+		if (winner === playerTypes.USER) {
 			setScore(prevScore => prevScore + 1);
-		} else if (winner === Player.COMPUTER) {
+		} else if (winner === playerTypes.COMPUTER) {
 			setScore(prevScore => prevScore - 1);
 		}
 	};
 
 	return (
-		<userPlayContext.Provider value={{ setUserPlay, setHasBeenClicked }}>
-			<main className='main-container'>
-				<Scoreboard score={score} />
-				{isPlayingOriginalGame ? <OriginalGame /> : <BonusGame />}
-			</main>
-		</userPlayContext.Provider>
+		<main className='main-container'>
+			<Scoreboard score={score} />
+			{isPlayingOriginalGame ? <OriginalGame /> : <BonusGame />}
+		</main>
 	);
 };
 

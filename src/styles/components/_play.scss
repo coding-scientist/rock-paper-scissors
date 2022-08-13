@@ -21,13 +21,25 @@
 }
 
 .play__rock::before {
-	background: linear-gradient(to top, variables.$Rock-Gradient-Start 0%, variables.$Rock-Gradient-End 50%);
+	background: linear-gradient(
+		to top,
+		variables.$Rock-Gradient-Start 0%,
+		variables.$Rock-Gradient-End 50%
+	);
 }
 
 .play__paper::before {
-	background: linear-gradient(to top, variables.$Paper-Gradient-Start 0%, variables.$Paper-Gradient-End 50%);
+	background: linear-gradient(
+		to top,
+		variables.$Paper-Gradient-Start 0%,
+		variables.$Paper-Gradient-End 50%
+	);
 }
 
 .play__scissors::before {
-	background: linear-gradient(to top, variables.$Scissors-Gradient-Start 0%, variables.$Scissors-Gradient-End 50%);
+	background: linear-gradient(
+		to top,
+		variables.$Scissors-Gradient-Start 0%,
+		variables.$Scissors-Gradient-End 50%
+	);
 }

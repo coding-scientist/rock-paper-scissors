@@ -1,10 +1,10 @@
 import { FC } from 'react';
+import Background_Triangle from '../assets/images/bg-triangle.svg';
 import Paper_Icon from '../assets/images/icon-paper.svg';
-import Scissor_Icon from '../assets/images/icon-scissors.svg';
 import Rock_Icon from '../assets/images/icon-rock.svg';
+import Scissor_Icon from '../assets/images/icon-scissors.svg';
+import { originalPlays } from '../enums/originalPlays';
 import Play from './Play';
-import { Plays } from '../enums/Plays';
-import Background_Triangle from '../assets/images/bg-triangle.svg'
 
 const OriginalGame: FC = () => {
 	return (
@@ -12,15 +12,15 @@ const OriginalGame: FC = () => {
 			<img src={Background_Triangle} className='original-play-icons__background--triangle' alt="Background image" />
 			<Play
 				backgroundICon={Paper_Icon}
-				playType={Plays.PAPER}
+				playType={originalPlays.PAPER}
 			/>
 			<Play
 				backgroundICon={Scissor_Icon}
-				playType={Plays.SCISSORS}
+				playType={originalPlays.SCISSORS}
 			/>
 			<Play
 				backgroundICon={Rock_Icon}
-				playType={Plays.ROCK}
+				playType={originalPlays.ROCK}
 			/>
 		</section>
 	);

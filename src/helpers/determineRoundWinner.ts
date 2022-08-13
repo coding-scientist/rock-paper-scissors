@@ -1,24 +1,48 @@
-import { Player } from '../enums/Player';
-import { Plays } from '../enums/Plays';
+import { originalPlays } from '../enums/originalPlays';
+import { playerTypes } from '../enums/playerTypes';
 
-export default function determineRoundWinner(userPlay: Plays, computerPlay: Plays): Player {
-	if (userPlay === Plays.ROCK && computerPlay === Plays.ROCK) {
-		return Player.TIE;
-	} else if (userPlay === Plays.ROCK && computerPlay === Plays.PAPER) {
-		return Player.COMPUTER;
-	} else if (userPlay === Plays.ROCK && computerPlay === Plays.SCISSORS) {
-		return Player.USER;
-	} else if (userPlay === Plays.PAPER && computerPlay === Plays.ROCK) {
-		return Player.USER;
-	} else if (userPlay === Plays.PAPER && computerPlay === Plays.PAPER) {
-		return Player.TIE;
-	} else if (userPlay === Plays.PAPER && computerPlay === Plays.SCISSORS) {
-		return Player.COMPUTER;
-	} else if (userPlay === Plays.SCISSORS && computerPlay === Plays.ROCK) {
-		return Player.COMPUTER;
-	} else if (userPlay === Plays.SCISSORS && computerPlay === Plays.PAPER) {
-		return Player.USER;
-	}	else {
-		return Player.TIE;
+export default function determineRoundWinner(
+	userPlay: originalPlays,
+	computerPlay: originalPlays
+): playerTypes {
+	if (userPlay === originalPlays.ROCK && computerPlay === originalPlays.ROCK) {
+		return playerTypes.TIE;
+	} else if (
+		userPlay === originalPlays.ROCK &&
+		computerPlay === originalPlays.PAPER
+	) {
+		return playerTypes.COMPUTER;
+	} else if (
+		userPlay === originalPlays.ROCK &&
+		computerPlay === originalPlays.SCISSORS
+	) {
+		return playerTypes.USER;
+	} else if (
+		userPlay === originalPlays.PAPER &&
+		computerPlay === originalPlays.ROCK
+	) {
+		return playerTypes.USER;
+	} else if (
+		userPlay === originalPlays.PAPER &&
+		computerPlay === originalPlays.PAPER
+	) {
+		return playerTypes.TIE;
+	} else if (
+		userPlay === originalPlays.PAPER &&
+		computerPlay === originalPlays.SCISSORS
+	) {
+		return playerTypes.COMPUTER;
+	} else if (
+		userPlay === originalPlays.SCISSORS &&
+		computerPlay === originalPlays.ROCK
+	) {
+		return playerTypes.COMPUTER;
+	} else if (
+		userPlay === originalPlays.SCISSORS &&
+		computerPlay === originalPlays.PAPER
+	) {
+		return playerTypes.USER;
+	} else {
+		return playerTypes.TIE;
 	}
 }

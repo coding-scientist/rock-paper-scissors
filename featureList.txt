@@ -1,4 +1,4 @@
-!!IMPORTANT export context into a separate context file
+!!IMPORTANT export context into a separate context file /
 
 shuffle animation for the house's play as well as a sound effect if you win or lose
 
@@ -20,12 +20,12 @@ An algorithm to determine who has won the round (original */)
 
 the house's play should be random /
 
-the house's play should be a random selection from the list of possible plays /
+the house's play should be a random selection from the list of possible originalPlays /
 
 a wavy colour effect behind the player who wins the round
 
-A separate algorithm to determine who was won the game that includes the bonus plays
+A separate algorithm to determine who was won the game that includes the bonus originalPlays
 
 
 
-potentially use enums to represent the different plays /
+potentially use enums to represent the different originalPlays /

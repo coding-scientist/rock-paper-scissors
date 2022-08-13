@@ -1,23 +1,23 @@
 import { FC, useContext } from 'react';
-import { userPlayContext } from '../App';
-import { Plays } from '../enums/Plays';
+import { globalContext } from '../context/GlobalContext';
+import { originalPlays } from '../enums/originalPlays';
 
 interface Props {
 	backgroundICon: string;
-	playType: Plays;
+	playType: originalPlays;
 }
 
 const Play: FC<Props> = props => {
-	const { setUserPlay, setHasBeenClicked } = useContext(userPlayContext);
+	const { setUserPlay, setHasBeenClicked } = useContext(globalContext);
 
 	return (
 		<div
 			className={`play ${
-				props.playType === Plays.PAPER
+				props.playType === originalPlays.PAPER
 					? 'play__paper'
-					: props.playType === Plays.ROCK
+					: props.playType === originalPlays.ROCK
 					? 'play__rock'
-					: props.playType === Plays.SCISSORS
+					: props.playType === originalPlays.SCISSORS
 					? 'play__scissors'
 					: ''
 			}`}
